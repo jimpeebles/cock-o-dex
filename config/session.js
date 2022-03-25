@@ -10,9 +10,6 @@
  */
 
 module.exports.session = {
-  adapter: '@sailshq/connect-redis',
-  url: 'redis://cockodex:HsGsj49djHJBwY947ZlwArgw@cockodex-redis.3r0f5j.clustercfg.memorydb.us-east-1.amazonaws.com:6379/0',
-
   /***************************************************************************
   *                                                                          *
   * Session secret is automatically generated when your new app is created   *
