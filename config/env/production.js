@@ -49,12 +49,7 @@ module.exports = {
     default: {
       adapter: 'sails-mysql',
       host: 'cock-o-dex-db.chpntwqx4wtx.us-east-1.rds.amazonaws.com',
-      database: 'app',
-      user: 'cockodex',
-      password: 'Tr00p3r.',
-      connectTimeout: 20000
-      // adapter: 'sails-mysql',
-      // url: 'mysql://user:password@host:port/database',
+      url: 'mysql://cockodex:Tr00p3r.@cock-o-dex-db.chpntwqx4wtx.us-east-1.rds.amazonaws.com:3306/app',
       //--------------------------------------------------------------------------
       //  /\   To avoid checking it in to version control, you might opt to set
       //  ||   sensitive credentials like `url` using an environment variable.
@@ -76,7 +71,7 @@ module.exports = {
       * https://sailsjs.com/config/datastores                                     *
       *                                                                           *
       ****************************************************************************/
-      // ssl: { rejectUnauthorized: true },
+      ssl: { rejectUnauthorized: true },
 
     },
 
