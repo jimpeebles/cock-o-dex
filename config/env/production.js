@@ -48,7 +48,6 @@ module.exports = {
     ***************************************************************************/
     default: {
       adapter: 'sails-mysql',
-      host: 'cock-o-dex-db.chpntwqx4wtx.us-east-1.rds.amazonaws.com',
       url: 'mysql://cockodex:Tr00p3r.@cock-o-dex-db.chpntwqx4wtx.us-east-1.rds.amazonaws.com:3306/app',
       //--------------------------------------------------------------------------
       //  /\   To avoid checking it in to version control, you might opt to set
