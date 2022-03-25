@@ -1,3 +1,39 @@
+<script type="text/x-template" id="search-template">
+  <div class="search-container">
+    <div class="actions">
+      <button class="button is-large is-primary" @click="search">Search</button>
+      <button class="button is-large is-danger" @click="clear">Clear</button>
+    </div>
+    <div class="selected-terms">
+      <span
+        class="selected-terms__term"
+        v-for="term in selectedTerms"
+        :key="term.label"
+        >{{ term.label }}</span
+      >
+    </div>
+    <div class="terms">
+      <button
+        v-for="term in termOptions"
+        :key="term.label"
+        @click="addTerm(term)"
+        class="button is-large term-button"
+      >
+        {{ term.label }}
+      </button>
+    </div>
+    <div class="results">
+      <div class="card" v-for="result in results" :key="result.name">
+        <div class="card-content">
+          <p class="title is-4">{{ result.name }}</p>
+          <div class="content">
+            {{ result.build }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>
 <div id="welcome">
   <account-notification-banner></account-notification-banner>
   <div class="container pt-5 pb-5">
