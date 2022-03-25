@@ -51,7 +51,8 @@ module.exports = {
       host: 'cock-o-dex-db.chpntwqx4wtx.us-east-1.rds.amazonaws.com',
       database: 'app',
       user: 'cockodex',
-      password: 'Tr00p3r.'
+      password: 'Tr00p3r.',
+      connectTimeout: 20000
       // adapter: 'sails-mysql',
       // url: 'mysql://user:password@host:port/database',
       //--------------------------------------------------------------------------
