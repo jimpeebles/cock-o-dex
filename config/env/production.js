@@ -70,7 +70,7 @@ module.exports = {
       * https://sailsjs.com/config/datastores                                     *
       *                                                                           *
       ****************************************************************************/
-      ssl: { rejectUnauthorized: true },
+      // ssl: { rejectUnauthorized: true },
 
     },
 
@@ -250,9 +250,9 @@ module.exports = {
     * > Be sure to use the right protocol!  ("http://" vs. "https://")         *
     *                                                                          *
     ***************************************************************************/
-    onlyAllowOrigins: [
-      'https://cock-o-dex-app.herokuapp.com',
-    ],
+    // onlyAllowOrigins: [
+    //   'https://cock-o-dex-app.herokuapp.com',
+    // ],
 
 
     /***************************************************************************
