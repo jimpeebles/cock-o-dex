@@ -48,7 +48,10 @@ module.exports = {
     ***************************************************************************/
     default: {
       adapter: 'sails-mysql',
-      url: 'mysql://cockodex:Tr00p3r.@cock-o-dex-db.chpntwqx4wtx.us-east-1.rds.amazonaws.com:3306/app',
+      host: 'cock-o-dex-db.chpntwqx4wtx.us-east-1.rds.amazonaws.com',
+      database: 'app',
+      user: 'cockodex',
+      password: 'Tr00p3r.'
       // adapter: 'sails-mysql',
       // url: 'mysql://user:password@host:port/database',
       //--------------------------------------------------------------------------
