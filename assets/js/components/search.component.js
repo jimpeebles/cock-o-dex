@@ -8,6 +8,7 @@
  */
 const TERM_SPIRIT = 'spirit';
 const TERM_MODIFIER = 'modifier';
+const axios = require('axios').default;
 
 parasails.registerComponent('search', {
   //  ╔═╗╦═╗╔═╗╔═╗╔═╗
@@ -74,7 +75,7 @@ parasails.registerComponent('search', {
         },
       };
       try {
-        const response = await $axios.request({
+        const response = await axios.request({
           method: 'post',
           url: 'http://localhost:9200/cocktail/_search',
           data: fullQuery,
