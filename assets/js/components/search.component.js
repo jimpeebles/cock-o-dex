@@ -8,12 +8,8 @@
  */
 const TERM_SPIRIT = 'spirit';
 const TERM_MODIFIER = 'modifier';
-const axios = require('axios').default;
 
 parasails.registerComponent('search', {
-  //  ╔═╗╦═╗╔═╗╔═╗╔═╗
-  //  ╠═╝╠╦╝║ ║╠═╝╚═╗
-  //  ╩  ╩╚═╚═╝╩  ╚═╝
   props: [],
 
   //  ╦╔╗╔╦╔╦╗╦╔═╗╦    ╔═╗╔╦╗╔═╗╔╦╗╔═╗
