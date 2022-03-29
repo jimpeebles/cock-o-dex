@@ -75,14 +75,13 @@ parasails.registerComponent('search', {
         },
       };
       try {
-        const response = await axios.request({
-          method: 'post',
+        const response = await fetch({
+          method: 'POST',
           url: 'http://localhost:9200/cocktail/_search',
-          data: fullQuery,
+          body: JSON.stringify(fullQuery),
           headers: {
             'Content-Type': 'application/json'
-          },
-          httpsAgent: httpsAgent
+          }
         });
         console.log(response);
         const results = response.data.hits.hits.map((r) => r._source);
