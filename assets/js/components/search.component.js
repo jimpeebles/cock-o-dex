@@ -70,10 +70,10 @@ parasails.registerComponent('search', {
           },
         },
       };
+      const url =  'http://localhost:9200/cocktail/_search';
       try {
-        const response = await fetch({
+        const response = await fetch(url, {
           method: 'POST',
-          url: 'http://localhost:9200/cocktail/_search',
           body: JSON.stringify(fullQuery),
           headers: {
             'Content-Type': 'application/json'
