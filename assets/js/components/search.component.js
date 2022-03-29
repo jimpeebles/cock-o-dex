@@ -59,7 +59,8 @@ parasails.registerComponent('search', {
       this.selectedTerms.push(term);
     },
     async search() {
-      const url =  `http://localhost:9200/cocktail/_search?terms=${this.selectedTerms.join()}`;
+      const terms = this.selectedTerms.map((term) => term.value);
+      const url =  `http://localhost:9200/cocktail/_search?terms=${terms.join(',')}`;
       try {
         const response = await fetch(url).then((res) => res.json());
         console.log(response);
