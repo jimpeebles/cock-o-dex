@@ -5,10 +5,10 @@
  *
  * @type {Component}
  * -----------------------------------------------------------------------------
- */ 
- const TERM_SPIRIT = "spirit";
- const TERM_MODIFIER = "modifier";
- 
+ */
+const TERM_SPIRIT = 'spirit';
+const TERM_MODIFIER = 'modifier';
+
 parasails.registerComponent('search', {
   //  ╔═╗╦═╗╔═╗╔═╗╔═╗
   //  ╠═╝╠╦╝║ ║╠═╝╚═╗
@@ -75,18 +75,16 @@ parasails.registerComponent('search', {
       };
       try {
         const response = await $axios.request({
-          method: "post",
-          url: "https://3.83.108.116:9200/cocktail/_search",
+          method: 'post',
+          url: 'http://localhost:9200/cocktail/_search',
           data: fullQuery,
           headers: {
-            "Content-Type": "application/json",
-            Authorization:
-              "ApiKey bGtrVnZuOEJ2ZnJPQ3VFQy0tZ2o6OTlZTWFUUzRRQVdaekhtU3FpWVRNZw==",
+            'Content-Type': 'application/json'
           },
-          httpsAgent: httpsAgent,
+          httpsAgent: httpsAgent
         });
         console.log(response);
-        const results = (response.data?.hits?.hits ?? []).map((r) => r._source);
+        const results = response.data.hits.hits.map((r) => r._source);
         console.log(results);
         this.results = results;
       } catch (e) {
