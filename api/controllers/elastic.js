@@ -2,8 +2,9 @@ const axios = require('axios').default;
 module.exports = {
   search: async (req, res) => {
     const { terms } = req.query;
+    const termsArray = terms.split(',');
     const shouldQuery = [];
-    terms.forEach((term) => {
+    termsArray.forEach((term) => {
       shouldQuery.push({ term: { build: term.value } });
     });
     const fullQuery = {

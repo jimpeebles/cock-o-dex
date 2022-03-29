@@ -59,27 +59,9 @@ parasails.registerComponent('search', {
       this.selectedTerms.push(term);
     },
     async search() {
-      const shouldQuery = [];
-      this.selectedTerms.forEach((term) => {
-        shouldQuery.push({ term: { build: term.value } });
-      });
-      const fullQuery = {
-        query: {
-          bool: {
-            should: shouldQuery,
-          },
-        },
-      };
-      const url =  'http://localhost:9200/cocktail/_search';
+      const url =  `http://localhost:9200/cocktail/_search?terms=${this.selectedTerms.join()}`;
       try {
-        const response = await fetch(url, {
-          method: 'POST',
-          mode: 'no-cors',
-          body: JSON.stringify(fullQuery),
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        }).then((res) => res.json());
+        const response = await fetch(url).then((res) => res.json());
         console.log(response);
         const results = response.data.hits.hits.map((r) => r._source);
         console.log(results);
