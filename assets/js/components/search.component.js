@@ -82,7 +82,7 @@ parasails.registerComponent('search', {
           headers: {
             'Content-Type': 'application/json'
           }
-        });
+        }).then((res) => res.json());
         console.log(response);
         const results = response.data.hits.hits.map((r) => r._source);
         console.log(results);
