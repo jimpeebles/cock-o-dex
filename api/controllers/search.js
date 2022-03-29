@@ -29,6 +29,6 @@ module.exports = async function search(req, res) {
     console.log(results);
     return res.json(results);
   } catch (e) {
-    console.log(e);
+    console.log(e.response.data);
   }
 };
