@@ -4,7 +4,7 @@ module.exports = async function search(req, res) {
   const termsArray = terms.split(',');
   const shouldQuery = [];
   termsArray.forEach((term) => {
-    shouldQuery.push({ term: { build: term.value } });
+    shouldQuery.push({ term: { build: term } });
   });
   const fullQuery = {
     query: {
