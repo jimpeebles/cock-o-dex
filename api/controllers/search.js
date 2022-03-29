@@ -1,6 +1,5 @@
 const axios = require('axios').default;
-module.exports = {
-  search: async (req, res) => {
+module.exports = async function search(req, res) {
     const { terms } = req.query;
     const termsArray = terms.split(',');
     const shouldQuery = [];
