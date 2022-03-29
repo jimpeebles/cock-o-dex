@@ -74,6 +74,7 @@ parasails.registerComponent('search', {
       try {
         const response = await fetch(url, {
           method: 'POST',
+          mode: 'no-cors',
           body: JSON.stringify(fullQuery),
           headers: {
             'Content-Type': 'application/json'
