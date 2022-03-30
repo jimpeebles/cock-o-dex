@@ -64,9 +64,7 @@ parasails.registerComponent('search', {
       try {
         const response = await fetch(url).then((res) => res.json());
         console.log(response);
-        const results = response.data.hits.hits.map((r) => r._source);
-        console.log(results);
-        this.results = results;
+        this.results = response;
       } catch (e) {
         console.log(e);
       }
