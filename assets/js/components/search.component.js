@@ -23,6 +23,8 @@ parasails.registerComponent('search', {
         { label: 'Vodka', value: 'vodka', type: TERM_SPIRIT },
         { label: 'Whiskey', value: 'whiskey', type: TERM_SPIRIT },
         { label: 'Rum', value: 'rum', type: TERM_SPIRIT },
+        { label: 'Pisco', value: 'rum', type: TERM_SPIRIT },
+        { label: 'Cognac', value: 'rum', type: TERM_SPIRIT },
         { label: 'Lemon', value: 'lemon', type: TERM_MODIFIER },
         { label: 'Lime', value: 'lime', type: TERM_MODIFIER },
         { label: 'Passionfruit', value: 'passionfruit', type: TERM_MODIFIER },
