@@ -1,7 +1,7 @@
 /**
- * app
+ * search
  * -----------------------------------------------------------------------------
- * A new component
+ * Search the cockodex
  *
  * @type {Component}
  * -----------------------------------------------------------------------------
@@ -12,9 +12,6 @@ const TERM_MODIFIER = 'modifier';
 parasails.registerComponent('search', {
   props: [],
 
-  //  ╦╔╗╔╦╔╦╗╦╔═╗╦    ╔═╗╔╦╗╔═╗╔╦╗╔═╗
-  //  ║║║║║ ║ ║╠═╣║    ╚═╗ ║ ╠═╣ ║ ║╣
-  //  ╩╝╚╝╩ ╩ ╩╩ ╩╩═╝  ╚═╝ ╩ ╩ ╩ ╩ ╚═╝
   data: function () {
     return {
       selectedTerms: [],
@@ -23,6 +20,7 @@ parasails.registerComponent('search', {
         { label: 'Vodka', value: 'vodka', type: TERM_SPIRIT },
         { label: 'Whiskey', value: 'whiskey', type: TERM_SPIRIT },
         { label: 'Rum', value: 'rum', type: TERM_SPIRIT },
+        { label: 'Tequila', value: 'tequila', type: TERM_SPIRIT },
         { label: 'Pisco', value: 'rum', type: TERM_SPIRIT },
         { label: 'Cognac', value: 'rum', type: TERM_SPIRIT },
         { label: 'Lemon', value: 'lemon', type: TERM_MODIFIER },
@@ -35,30 +33,40 @@ parasails.registerComponent('search', {
     };
   },
 
-  //  ╦ ╦╔╦╗╔╦╗╦
-  //  ╠═╣ ║ ║║║║
-  //  ╩ ╩ ╩ ╩ ╩╩═╝
   template: '#search-template',
 
-  //  ╦  ╦╔═╗╔═╗╔═╗╦ ╦╔═╗╦  ╔═╗
-  //  ║  ║╠╣ ║╣ ║  ╚╦╝║  ║  ║╣
-  //  ╩═╝╩╚  ╚═╝╚═╝ ╩ ╚═╝╩═╝╚═╝
   beforeMount: function () {},
 
   mounted: function () {},
 
   beforeDestroy: function () {},
 
-  //  ╦╔╗╔╔╦╗╔═╗╦═╗╔═╗╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
-  //  ║║║║ ║ ║╣ ╠╦╝╠═╣║   ║ ║║ ║║║║╚═╗
-  //  ╩╝╚╝ ╩ ╚═╝╩╚═╩ ╩╚═╝ ╩ ╩╚═╝╝╚╝╚═╝
+  computed: {
+    // sortedTerms() {
+    //   const spirits = [];
+    //   const modifiers = [];
+    //   this.termOptions.forEach(option => {
+    //     switch (option.type) {
+    //       case TERM_SPIRIT:
+    //         spirits.push(option);
+    //         break;
+    //       case TERM_MODIFIER:
+    //         modifiers.
+    //     }
+    //     if (option.type === TERM_SPIRIT) {}
+    //   })
+    // }
+  },
+
   methods: {
     clear() {
       this.selectedTerms = [];
       this.results = [];
     },
     addTerm(term) {
-      this.selectedTerms.push(term);
+      if (!this.selectedTerms.includes(term)) {
+        this.selectedTerms.push(term);
+      }
     },
     async search() {
       const terms = this.selectedTerms.map((term) => term.value);

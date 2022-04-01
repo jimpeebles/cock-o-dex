@@ -7,6 +7,7 @@ module.exports = async function search(req, res) {
     shouldQuery.push({ term: { build: term } });
   });
   const fullQuery = {
+    size: 20,
     query: {
       bool: {
         should: shouldQuery,
