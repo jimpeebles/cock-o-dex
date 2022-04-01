@@ -23,12 +23,10 @@
       </button>
     </div>
     <div class="results">
-      <div class="card" v-for="result in results" :key="result.name">
+      <div class="card" v-for="result in results" :key="`${result.name}${Math.random()}`">
         <div class="card-content">
           <p class="title is-4">{{ result.name }}</p>
-          <div class="content">
-            {{ result.build.trim() }}
-          </div>
+          <div class="content">{{ result.build.trim() }}</div>
         </div>
       </div>
     </div>
